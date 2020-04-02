@@ -302,8 +302,8 @@ static void *update_caches(void *) {
             RELEASE_ALL_LOCK;
             break;
         }
-        const char *paths[] = {"/.UserInfos/.balance_result", "/.UserInfos/.account_result", "/.UserInfos/.transaction_result"};
-        for (int i = 0; i < 3; ++i) {
+        const char *paths[] = {"/.UserInfos/.balance_result", "/.UserInfos/.account_result", "/.UserInfos/.transaction_result", "/.UserInfos/.receive"};
+        for (int i = 0; i < 4; ++i) {
             LIBSSH2_SFTP_ATTRIBUTES attribute;
             int res = libssh2_sftp_lstat(Lstat_Handle, REAL_PATH(paths[i]), &attribute);
             if (res == 0) {
